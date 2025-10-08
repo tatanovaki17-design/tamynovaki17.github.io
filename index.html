@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tamyres Novaki — Social Mídia & E‑commerce</title>
+  <meta name="description" content="Crio textos e estratégias que traduzem a essência das marcas em palavras, entre estética e propósito, transformo ideias em presença digital." />
+  <meta name="author" content="Tamyres Novaki" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tamyres Novaki — Portfólio" />
+  <meta property="og:description" content="Traduzo o invisível em palavras que fazem sentir. Portfólio, serviços e contato." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/tamynovaki17/tamynovaki17.github.io/main/cover.jpg" />
+  <meta property="og:url" content="https://tamynovaki17.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f4ef;           /* areia/bege leve */
+      --paper: #ffffff;
+      --ink: #2d2a26;         /* marrom quase preto */
+      --muted: #6b665f;
+      --accent: #5fa8d3;      /* azul água */
+      --accent-2: #6fc2b0;    /* verde água */
+      --ring: rgba(95,168,211,.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --radius: 18px;
+      --gap: clamp(16px, 3vw, 28px);
+      --container: min(1120px, 90vw);
+    }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      margin: 0; background: radial-gradient(1200px 600px at 80% -10%, rgba(111,194,176,.10), transparent 60%),
+                                  radial-gradient(900px 500px at -10% 10%, rgba(95,168,211,.10), transparent 60%), var(--bg);
+      color: var(--ink); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+    }
+
+    /* Layout */
+    .container { width: var(--container); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(6px); background: rgba(247,244,239,.7); border-bottom: 1px solid rgba(0,0,0,.05); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: var(--gap); padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .2px; }
+    .dot { width: 14px; height: 14px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 0 4px var(--ring); }
+
+    nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+    nav a { color: var(--ink); text-decoration: none; font-weight: 500; opacity: .85; }
+    nav a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+
+    .menu-btn { display: none; border: 1px solid rgba(0,0,0,.12); padding: 8px 12px; border-radius: 10px; background: var(--paper); }
+
+    /* Hero */
+    .hero { padding: clamp(48px, 10vw, 120px) 0; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: var(--gap); align-items: center; }
+    .eyebrow { color: var(--muted); letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; font-weight: 600; }
+    h1 { font-family: "Crimson Text", Georgia, serif; font-size: clamp(36px, 5vw, 60px); line-height: 1.1; margin: 10px 0 16px; }
+    .lead { font-size: clamp(16px, 2.1vw, 19px); color: #3a3732; max-width: 52ch; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 999px; text-decoration: none; font-weight: 600; border: 1px solid rgba(0,0,0,.10); background: var(--paper); box-shadow: var(--shadow); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; border: none; }
+    .note { margin-top: 10px; color: var(--muted); font-size: .95rem; }
+    .card-image { aspect-ratio: 4/3; background: linear-gradient(135deg, rgba(95,168,211,.15), rgba(111,194,176,.15)); border-radius: var(--radius); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+    .blob { position: absolute; inset: -20% -10% auto auto; width: 70%; height: 70%; background: radial-gradient(closest-side, rgba(95,168,211,.35), transparent); filter: blur(20px); }
+
+    /* Sections */
+    section { padding: clamp(48px, 8vw, 96px) 0; }
+    .section-title { font-family: "Crimson Text", Georgia, serif; font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; }
+    .section-kicker { color: var(--muted); text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 600; }
+    .two-col { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--gap); align-items: start; }
+
+    /* Serviços */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
+    .card { background: var(--paper); border-radius: var(--radius); padding: clamp(16px, 2.4vw, 22px); box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,.06); }
+    .card h3 { margin: 6px 0 8px; font-size: 1.05rem; }
+    .icon { width: 28px; height: 28px; color: var(--accent); }
+
+    /* Portfólio */
+    .portfolio { background: linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,0)); }
+    .work { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
+    .work {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.work .item {
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.work .item img {
+  width: 100%;
+  border-radius: 18px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.work .item h4 {
+  margin: 8px 0 4px;
+}
+
+.work .item p {
+  flex-grow: 1;
+  margin-bottom: 16px;
+  color: #3b3732;
+}
+/* Botões uniformes no portfólio */
+.work .item .btn {
+  align-self: flex-start;            /* mantém o botão alinhado à esquerda */
+  margin-top: auto;                  /* empurra o botão pra base do card */
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.08);
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: all .25s ease;
+}
+
+.work .item .btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+
+    .tag { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .item h4 { margin: 2px 0 2px; }
+    .item p { margin: 0; color: #3b3732; }
+    .item a { margin-top: 8px; font-weight: 600; text-decoration: none; color: var(--accent); }
+
+    /* Citação */
+    .quote { text-align: center; background: var(--paper); border: 1px solid rgba(0,0,0,.06); box-shadow: var(--shadow); border-radius: var(--radius); padding: clamp(24px, 4vw, 36px); }
+    blockquote { font-family: "Crimson Text", Georgia, serif; font-size: clamp(20px, 3vw, 28px); margin: 0; }
+
+    /* Contato */
+    .contact { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--gap); }
+    .contact .panel { background: var(--paper); padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,.06); }
+    .list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .list a { color: var(--ink); text-decoration: none; }
+    .list a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    footer { padding: 36px 0 56px; color: var(--muted); font-size: .95rem; }
+
+    /* Responsivo */
+    @media (max-width: 980px) {
+      .hero-grid, .two-col, .contact { grid-template-columns: 1fr; }
+      .grid, .work { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .menu-btn { display: inline-flex; }
+      .card-image { order: -1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Navegação principal">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> Tamyres Novaki</div>
+      <nav>
+        <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+        <ul id="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Presença digital com alma</div>
+          <h1>Traduzo o invisível em palavras que fazem sentir.</h1>
+          <p class="lead">Crio estratégias e conteúdos que unem estética, propósito e organização. Entre o planejamento e a poesia, dou forma ao que é sentido, com leveza, verdade e intenção.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://wa.link/bnjpci">Falar comigo</a>
+            <a class="btn" href="#portfolio">Ver projetos</a>
+          </div>
+          <div class="note">Social mídia & e‑commerce • Balneário Camboriú — BR</div>
+        </div>
+        <div class="card-image">
+  <img src="https://i.ibb.co/w5XWkxC/Home.png" 
+       alt="Imagem de destaque do portfólio de Tamyres Novaki" 
+       style="width:100%; height:100%; object-fit:cover; border-radius:18px;">
+       
+</div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container two-col">
+        <div>
+          <div class="section-kicker">Sobre mim</div>
+          <h2 class="section-title">Prazer, Tamyres!</h2>
+          <p>Acredito que toda marca tem uma história, e meu papel é ajudar a contar essa história de um jeito leve, bonito e verdadeiro.</p>
+          <p>Atuo com a parte estratégica e operacional do digital: cadastro de produtos, SEO e campanhas. Foi onde aprendi a unir estética, organização e propósito.</p>
+          <p>Sou movida por significado. Gosto de transformar ideias em conteúdo que transmite sentimento, sem perder a clareza e a intenção por trás de cada palavra.</p>
+        </div>
+        <aside>
+          <div class="card">
+            <strong>Missão</strong>
+            <p>Transformar ideias em presença digital, ajudando marcas e pessoas a se comunicarem com leveza, propósito e beleza. Cada detalhe, uma legenda, uma cor, uma palavra, pode transmitir sentimento e verdade.</p>
+          </div>
+          <div class="card" style="margin-top: var(--gap);">
+            <strong>Visão</strong>
+            <p>Uma presença digital que une estética e autenticidade, conectando marcas e pessoas por meio de emoção, clareza e propósito.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" aria-labelledby="servicos-title">
+      <div class="container">
+        <div class="section-kicker">Como posso ajudar</div>
+        <h2 class="section-title" id="servicos-title">Serviços</h2>
+        <div class="grid" role="list">
+          <article class="card" role="listitem">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18M3 12h18M3 19h18"/></svg>
+            <h3>Roteiros e legendas criativas</h3>
+            <p>Textos que traduzem a essência da marca em palavras. Roteiros para Reels, legendas que conectam e ideias que transformam o comum em conteúdo com propósito.</p>
+          </article>
+          <article class="card" role="listitem">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="3"/><path d="M7 8h10M7 12h6"/></svg>
+            <h3>Planejamento de conteúdo</h3>
+            <p>Organização de ideias, temas e formatos para dar ritmo e coerência à presença digital, um planejamento leve que respeita o estilo de quem comunica.</p>
+          </article>
+          <article class="card" role="listitem">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20l-3-3 3-3 3 3-3 3z"/><path d="M4 4h7v7H4z"/></svg>
+            <h3>Tradução de essência</h3>
+            <p>Escuta, percepção e refinamento para transformar o intangível em palavras e visuais que fazem sentido. Comunicação com alma, estética e intenção.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
+      <div class="container">
+        <div class="section-kicker">Recortes do meu olhar</div>
+        <h2 class="section-title" id="portfolio-title">Portfólio</h2>
+        <div class="work">
+          <article class="item">
+  <span class="tag">Vídeo • Experiência sensorial</span>
+  <h4>Aquário em 5 Sentidos</h4>
+
+  <a href="https://www.instagram.com/doseaqua/" target="_blank" rel="noopener" aria-label="Ver no Instagram da Dose Aqua">
+    <img src="https://i.ibb.co/Ldx1CSWS/Home-3.png"
+         alt="Aquário em 5 Sentidos – Dose Aqua"
+         style="width:100%; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.06); aspect-ratio:16/9; object-fit:cover;">
+  </a>
+
+  <p>Um vídeo criado para despertar sensações. A proposta explora a experiência de um aquário através dos cinco sentidos, ver, ouvir, tocar, respirar e sentir. Cada cena revela a vida que pulsa em silêncio: o movimento dos peixes, o som da água, a textura das plantas e a luz que dança entre os corais.</p>
+
+  <a href="https://www.instagram.com/p/DLItlmfO49B/" target="_blank" rel="noopener" class="btn" style="margin-top:8px;">Ver no Instagram</a>
+</article>
+
+       
+       <article class="item">
+  <span class="tag">Branding • Espaços</span>
+  <h4>A primeira impressão</h4>
+
+  <a href="https://www.instagram.com/doseaqua/" target="_blank" rel="noopener" aria-label="Ver no Instagram da Dose Aqua">
+    <img src="https://i.ibb.co/HTdjXvDR/Home-2.png"
+         alt="A primeira impressão – Dose Aqua"
+         style="width:100%; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.06); aspect-ratio:16/9; object-fit:cover;">
+  </a>
+
+  <p>O aquapaisagismo como parte da identidade corporativa, não apenas decoração. O som da água, o ritmo do fluxo e o silêncio entre as cenas criam uma atmosfera de presença e sofisticação.</p>
+
+  <a href="https://www.instagram.com/reel/DO9eFLEDs4l//" target="_blank" rel="noopener" class="btn" style="margin-top:8px;">Ver no Instagram</a>
+</article>
+
+         <article class="item">
+  <span class="tag">Educação • Parceria</span>
+  <h4>Parceria Reef-Roids</h4>
+
+  <a href="https://www.instagram.com/doseaqua/" target="_blank" rel="noopener" aria-label="Ver no Instagram da Dose Aqua">
+    <img src="https://i.ibb.co/hRxsCgVY/Home-4.png" 
+         alt="Parceria Reef-Roids – Dose Aqua" 
+         style="width:100%; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.06); aspect-ratio:16/9; object-fit:cover;">
+  </a>
+
+  <p>Conteúdo desenvolvido em parceria com a Dose Aqua para conectar ciência e estética natural. Mostra, de forma leve e didática, como a alimentação dos corais influencia cor, crescimento e vitalidade dos ecossistemas aquáticos.</p>
+
+  <a href="https://www.instagram.com/p/DOuIKFZDmEI/" target="_blank" rel="noopener" class="btn" style="margin-top:8px;">Ver no Instagram</a>
+</article>
+
+      </div>
+    </section>
+
+    <!-- CITAÇÃO / ASSINATURA -->
+    <section aria-label="Assinatura">
+      <div class="container">
+        <div class="quote">
+          <blockquote>Entre o planejamento e a poesia, é ali que minhas ideias acontecem. Cada projeto é uma conversa entre mim, a marca e o sentir, onde nasce o que realmente importa: presença, verdade e conexão.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" aria-labelledby="contato-title">
+      <div class="container contact">
+        <div>
+          <div class="section-kicker">Vamos conversar?</div>
+          <h2 class="section-title" id="contato-title">Contato</h2>
+          <p>Aberta a projetos, parcerias e consultorias. Respondo com carinho e clareza, e já levo ideias.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://wa.me/5541997515088" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn" href="mailto:tamynovaki.gestao@gmail.com">E‑mail</a>
+            <a class="btn" href="https://www.instagram.com/tamynovaki" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <aside class="panel" aria-label="Canais">
+          <ul class="list">
+            <li><strong>Telefone:</strong> <a href="tel:+5541997515088">(41) 9 9751‑5088</a></li>
+            <li><strong>E‑mail:</strong> <a href="mailto:tamynovaki.gestao@gmail.com">tamynovaki.gestao@gmail.com</a></li>
+            <li><strong>Instagram:</strong> <a href="https://instagram.com/tamynovaki" target="_blank" rel="noopener">@tamynovaki</a></li>
+            <li><strong>Base:</strong> Balneário Camboriú — SC</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Tamyres Novaki. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    // Ano automático no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu simplificado para mobile
+    const btn = document.querySelector('.menu-btn');
+    const list = document.getElementById('menu');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const isOpen = list.style.display === 'block';
+        list.style.display = isOpen ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+  </script>
+</body>
+</html>
